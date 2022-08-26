@@ -15,7 +15,6 @@ npm crecte-rect-app name folder
     - componentDidMount
     - componentDidUpdate
     - componentWillUnmount
-=======
   - componentDidMount
   - componentDidUpdate
   - componentWillUnmount
