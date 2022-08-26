@@ -19,6 +19,5 @@ npm crecte-rect-app name folder
   - componentDidMount
   - componentDidUpdate
   - componentWillUnmount
->>>>>>> 2f66ae99938c4dc4af261b23eefde4827118b2d1
 * event handling
 * 
