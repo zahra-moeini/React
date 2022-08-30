@@ -1,6 +1,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom/client';
 import './style.css';
+import TimeList from './TimeList';
 
 var interval;
 
@@ -57,6 +58,13 @@ class Timer extends React.Component{
       })
     }
 
+    handleSaveTime=()=>{
+      let h=this.state.hour
+      let m=this.state.minute
+      let s=this.state.second
+      let newTime=`${h > 9 ? h : "0"+h} : ${m > 9 ? m:"0"+m} : ${s > 9 ? s:"0"+s}`
+      this.props.setTimeArr([...this.props.timeArr,newTime])
+    }
 
 
     render(){
@@ -66,7 +74,7 @@ class Timer extends React.Component{
 
       return(
         <div>
-          <h2 className='timer'>
+          <h2 className='timer' onClick={this.handleSaveTime}>
             {`${h > 9 ? h : "0"+h} : ${m > 9 ? m:"0"+m} : ${s > 9 ? s:"0"+s}`}
           </h2>
   
@@ -83,7 +91,12 @@ class Timer extends React.Component{
           <button onClick={this.stopInterval}>stop</button>
           <button onClick={this.resetInterval}>reset</button>
 
+          <TimeList>
+              {this.props.timeArr}
+            </TimeList>
+
         </div>
+              
       )
     }
   }
