@@ -11,12 +11,10 @@ npm crecte-rect-app name folder
 * Component
 * Props
 * Lifecycle
-<<<<<<< HEAD
     - componentDidMount
     - componentDidUpdate
     - componentWillUnmount
-  - componentDidMount
-  - componentDidUpdate
-  - componentWillUnmount
 * event handling
-* 
+* React Hooks
+* useState
+* useEffect

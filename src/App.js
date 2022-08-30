@@ -2,51 +2,21 @@ import React ,{useEffect, useState} from 'react';
 import './style.css';
 import Hello from './Hello';
 import Timer from './Time';
+import TimeList from './TimeList'
 
-// class App extends React.Component{
-//   constructor(){
-//     super();
-//     this.state={
-//       title:"hello love Friend"
-//     }
 
-//     // this.handleSetTitle=this.handleSetTitle.bind(this)
-//   }
-
-//   handleSetTitle=()=>{
-//     this.setState({
-//       title:"welcome into codeyd"
-//     })
-//   }
-
-//   // handleSetTitle(){
-//   //   this.setState({
-//   //     title:"welcome into codeyd"
-//   //   })
-//   // }
-
- 
-
-//     render(){
-//       return(
-//         <div className='main'>
-//          <Hello title={this.state.title}/>
-//           <Timer handleSetTitle={this.handleSetTitle}/>
-  
-//         </div>
-//       )
-//     }
-//   }
 
 const App=()=>{
   const [title,setTitle]=useState("Hello my dear friend ")
 
   const [isLight , setIsLight] = useState(false);
 
+  const [timeArr,setTimeArr]=useState(["00:05:12" ,'00:05:13',"00:05:14","00:05:15", "00:05:16" ,"00:05:17"]);
+
   useEffect(()=>{
     console.log('useEffect');
     return()=>{
-      
+
     }
   },[isLight])
 
@@ -58,8 +28,12 @@ const App=()=>{
     <div className='main' style={{background:isLight ? "white" : "black"}}>
       <Hello title={title}/>
       <Timer isLight={isLight} handleSetIsLight={handleSetIsLight}/>
+      <TimeList>
+        {timeArr}
+      </TimeList>
     </div>
   )
 }
 
   export default App;
+
