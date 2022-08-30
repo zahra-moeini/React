@@ -70,7 +70,14 @@ class Timer extends React.Component{
             {`${h > 9 ? h : "0"+h} : ${m > 9 ? m:"0"+m} : ${s > 9 ? s:"0"+s}`}
           </h2>
   
-          {/* <button onClick={this.props.handleSetTitle}>on change</button> */}
+          <button onClick={this.props.handleSetIsLight}
+          style={{
+            background:this.props.isLight ? "black" : "white",
+            color:this.props.isLight ? "white" : "black"
+          }}
+          >
+            {this.props.isLight ? "dark" :"light"}
+            </button>
 
           <button onClick={this.startInterval}>start</button>
           <button onClick={this.stopInterval}>stop</button>
