@@ -1,21 +1,23 @@
 import React,{PureComponent} from "react";
-import { PureComponent } from "react";
 
-// class PureCompo extends PureComponent{
-//     render(){
-//         console.log("puerComponet");
-//         return(
-//             <h2> {"pure component :" + this.props.name}</h2>
-//         )
-//     }
-// }
-
-// export default PureCompo;
-
-const PureCompo=(props)=>{
-    return(
-        <h2>{"pure component :" + props.name}</h2>
-    )
+class PureCompo extends PureComponent{
+    constructor(){
+        super()
+        this.state={
+            name:""
+        }
+        this.counter=0
+    }
+    handleChangeName=()=>{
+        this.setState({
+            name : document.getElementById('myinput').value
+        })
+    }
+    render(){
+        return(
+            <div>
+                <h4></h4>
+            </div>
+        )
+    }
 }
-
-export default memo(PureCompo)
