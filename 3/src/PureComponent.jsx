@@ -1,40 +1,46 @@
-import React,{PureComponent} from "react";
-import { createRef } from "react";
+import React , {createRef, PureComponent}from 'react';
 
 class PureCompo extends PureComponent{
     constructor(){
         super()
-        this.state={
+        this.state = {
             name:""
         }
-        this.counter=0
-        this.myinput=createRef()
+        this.counter = 0
+        this.myInput = createRef()
     }
-    handleChangeName=()=>{
+
+    handleChangeName = ()=>{
         this.setState({
-            name :this.myinput.current.value
+            name :this.myInput.current.value
         })
     }
+
     componentDidMount(){
-        this.myinput.current.focus()
+        this.myInput.current.focus()
     }
+
+
     render(){
-   
         return(
-            <div>
-                <h4>حدث کلمه</h4>
-                <input ref={this.myinput} type="text"
-                autoComplete="off" />
+            <div className="form-fa-group text-center mt-4 p-3">
 
-                <button onClick={this
-                .handleChangeName}>ثبت</button>
+                <h4 className="text-center text-dark">حدث کلمه</h4>
 
-                <button onClick={()=>{this.myinput.current.value=""}}>مخفی</button>
+                <input ref={this.myInput} type="text" className="form-control" autoComplete="off"/>
 
-                <br/>
-                <span>{this.counter ++}</span>
+                <button className="btn btn-warning my-3" onClick={this.handleChangeName}>ثبت</button>
+
+                <button className="btn btn-secondary my-3 mx-2" onClick={()=>{this.myInput.current.value = ""}}>مخفی</button>
+
+                <br />
+
+                <span>{this.counter++}</span>
+
             </div>
         )
     }
 }
-export default PureCompo
+
+export default PureCompo;
+

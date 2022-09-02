@@ -1,11 +1,13 @@
-import ParentCompo from "./ParentComponent";
+import React from 'react';
+import ParentCompo from './ParentCompo';
 
-function App() {
+const App = ()=>{
     return (
         <div>
-          <ParentCompo/>
+            <ParentCompo/>
         </div>
-    );
-  }
+    ) 
+}
+
 
 export default App;
