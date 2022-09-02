@@ -1,4 +1,5 @@
 import React,{PureComponent} from "react";
+import { createRef } from "react";
 
 class PureCompo extends PureComponent{
     constructor(){
@@ -7,17 +8,33 @@ class PureCompo extends PureComponent{
             name:""
         }
         this.counter=0
+        this.myinput=createRef()
     }
     handleChangeName=()=>{
         this.setState({
-            name : document.getElementById('myinput').value
+            name :this.myinput.current.value
         })
     }
+    componentDidMount(){
+        this.myinput.current.focus()
+    }
     render(){
+   
         return(
             <div>
-                <h4></h4>
+                <h4>حدث کلمه</h4>
+                <input ref={this.myinput} type="text"
+                autoComplete="off" />
+
+                <button onClick={this
+                .handleChangeName}>ثبت</button>
+
+                <button onClick={()=>{this.myinput.current.value=""}}>مخفی</button>
+
+                <br/>
+                <span>{this.counter ++}</span>
             </div>
         )
     }
 }
+export default PureCompo
